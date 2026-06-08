@@ -227,6 +227,16 @@ input {
   letter-spacing: 0;
 }
 
+.hero-label,
+.section-label,
+.section-muted .section-label,
+.final-cta .section-label,
+.policy-hero .section-label,
+.panel-eyebrow {
+  color: var(--white);
+  background-color: var(--navy);
+}
+
 h1,
 h2,
 h3,
@@ -634,6 +644,13 @@ h3 {
 .split-layout > div > p,
 .company-caution {
   color: var(--muted);
+}
+
+.section-heading p.section-label,
+.split-layout > div > p.section-label,
+.company-intro > p.section-label {
+  color: var(--white);
+  background-color: var(--navy);
 }
 
 .section-note,
@@ -1107,11 +1124,9 @@ h3 {
 
 .company-logo-mark {
   display: block;
-  grid-column: 1 / -1;
-  justify-self: center;
-  width: min(260px, 70%);
+  width: min(220px, 64%);
   height: auto;
-  margin-top: 4px;
+  margin-top: 34px;
 }
 
 .company-table {
