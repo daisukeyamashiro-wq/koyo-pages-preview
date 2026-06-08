@@ -1,7 +1,7 @@
 const CONTACT_CONFIG = {
   email: "info@koyo-jpn.biz",
   subject: "中国→日本物流の事前確認依頼",
-  formUrl: "",
+  formUrl: "https://forms.gle/NN2nh1cTJW4Bq4Ee6",
   body: [
     "会社名：",
     "ご担当者名：",
