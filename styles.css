@@ -1082,6 +1082,17 @@ h3 {
   gap: 46px;
 }
 
+.company-intro {
+  align-self: start;
+}
+
+.company-logo-mark {
+  display: block;
+  width: min(320px, 82%);
+  height: auto;
+  margin-top: 42px;
+}
+
 .company-table {
   margin: 0;
 }
