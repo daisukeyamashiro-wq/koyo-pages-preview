@@ -233,8 +233,8 @@ input {
 .final-cta .section-label,
 .policy-hero .section-label,
 .panel-eyebrow {
-  color: var(--white);
-  background-color: var(--navy);
+  color: var(--white) !important;
+  background-color: var(--navy) !important;
 }
 
 h1,
@@ -649,8 +649,8 @@ h3 {
 .section-heading p.section-label,
 .split-layout > div > p.section-label,
 .company-intro > p.section-label {
-  color: var(--white);
-  background-color: var(--navy);
+  color: var(--white) !important;
+  background-color: var(--navy) !important;
 }
 
 .section-note,
