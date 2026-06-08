@@ -101,10 +101,10 @@ input {
 
 .brand-image {
   display: block;
-  width: 150px;
-  height: 44px;
-  object-fit: cover;
-  object-position: center;
+  width: 82px;
+  height: auto;
+  max-height: 30px;
+  object-fit: contain;
 }
 
 .brand-divider {
@@ -216,12 +216,12 @@ input {
   display: inline-flex;
   align-items: center;
   width: fit-content;
-  margin: 0 0 14px;
-  padding: 6px 10px;
+  margin: 0 0 16px;
+  padding: 8px 12px;
   border-radius: 6px;
   color: var(--white);
   background: var(--navy);
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.2;
   font-weight: 800;
   letter-spacing: 0;
@@ -358,6 +358,7 @@ h3 {
   color: rgba(255, 255, 255, 0.82);
   font-size: 13px;
   line-height: 1.7;
+  text-align: left;
 }
 
 .mail-fallback a {
@@ -368,8 +369,12 @@ h3 {
 }
 
 .copy-email {
-  margin-left: 8px;
+  display: inline-flex;
+  width: fit-content;
+  margin: 8px 0 0;
   padding: 5px 9px;
+  align-items: center;
+  justify-content: center;
   color: var(--white);
   background: rgba(255, 255, 255, 0.14);
   border: 1px solid rgba(255, 255, 255, 0.36);
@@ -389,6 +394,10 @@ h3 {
   list-style: none;
 }
 
+.badge-list {
+  flex-wrap: nowrap;
+}
+
 .badge-list li,
 .cta-points li {
   padding: 7px 10px;
@@ -398,6 +407,7 @@ h3 {
   border-radius: 999px;
   font-size: 13px;
   font-weight: 800;
+  white-space: nowrap;
 }
 
 .diagnostic-panel {
@@ -1097,9 +1107,11 @@ h3 {
 
 .company-logo-mark {
   display: block;
-  width: min(240px, 68%);
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: min(260px, 70%);
   height: auto;
-  margin-top: 36px;
+  margin-top: 4px;
 }
 
 .company-table {
@@ -1334,8 +1346,8 @@ h3 {
   }
 
   .brand-image {
-    width: 126px;
-    height: 38px;
+    width: 74px;
+    max-height: 28px;
   }
 
   .brand-company {
@@ -1474,9 +1486,14 @@ h3 {
     width: 100%;
   }
 
+  .hero-label,
+  .section-label,
+  .panel-eyebrow {
+    font-size: 16px;
+  }
+
   .copy-email {
-    display: inline-flex;
-    margin: 8px 0 0;
+    margin-top: 8px;
   }
 
   .policy-hero {
@@ -1485,6 +1502,12 @@ h3 {
 
   .policy-content h2 {
     font-size: 21px;
+  }
+}
+
+@media (max-width: 520px) {
+  .badge-list {
+    flex-wrap: wrap;
   }
 }
 
