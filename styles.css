@@ -99,10 +99,12 @@ input {
   white-space: nowrap;
 }
 
-.brand-logo {
-  font-size: 24px;
-  font-style: italic;
-  letter-spacing: 0;
+.brand-image {
+  display: block;
+  width: 150px;
+  height: 44px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .brand-divider {
@@ -211,9 +213,16 @@ input {
 .hero-label,
 .section-label,
 .panel-eyebrow {
-  margin: 0 0 12px;
-  color: var(--blue);
-  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: 0 0 14px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: var(--white);
+  background: var(--navy);
+  font-size: 15px;
+  line-height: 1.2;
   font-weight: 800;
   letter-spacing: 0;
 }
@@ -1088,9 +1097,9 @@ h3 {
 
 .company-logo-mark {
   display: block;
-  width: min(320px, 82%);
+  width: min(240px, 68%);
   height: auto;
-  margin-top: 42px;
+  margin-top: 36px;
 }
 
 .company-table {
@@ -1324,8 +1333,9 @@ h3 {
     min-height: 68px;
   }
 
-  .brand-logo {
-    font-size: 21px;
+  .brand-image {
+    width: 126px;
+    height: 38px;
   }
 
   .brand-company {
