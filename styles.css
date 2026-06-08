@@ -304,6 +304,39 @@ h3 {
   border-color: #9bb9d2;
 }
 
+.button-form {
+  color: var(--navy);
+  background: #f2f8fc;
+  border-color: #aed0e6;
+}
+
+.button-form:hover,
+.button-form:focus-visible {
+  background: #e7f4fb;
+}
+
+.button-form[aria-disabled="true"] {
+  color: #567189;
+  cursor: not-allowed;
+  opacity: 0.78;
+  transform: none;
+}
+
+.button-form-dark {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.button-form-dark:hover,
+.button-form-dark:focus-visible {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.button-form-dark[aria-disabled="true"] {
+  color: rgba(255, 255, 255, 0.78);
+}
+
 .button-light {
   color: var(--white);
   background: rgba(255, 255, 255, 0.14);
@@ -603,7 +636,7 @@ h3 {
 }
 
 .issue-grid {
-  align-items: start;
+  align-items: stretch;
 }
 
 .issue-grid article,
@@ -621,7 +654,9 @@ h3 {
 }
 
 .issue-grid article {
-  min-height: 0;
+  min-height: 78px;
+  display: flex;
+  align-items: center;
   padding: 14px 16px;
   color: var(--navy);
   font-size: 15px;
