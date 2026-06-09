@@ -287,6 +287,18 @@ h3 {
   align-items: center;
 }
 
+.hero-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: min(100%, 560px);
+  align-items: stretch;
+}
+
+.hero-actions .button {
+  width: 100%;
+  min-height: 54px;
+}
+
 .button {
   display: inline-flex;
   min-height: 48px;
@@ -343,14 +355,14 @@ h3 {
 
 .button-lcl-check {
   color: var(--white);
-  background: linear-gradient(135deg, #0a3b70 0%, #0b67b2 100%);
-  border-color: #0b67b2;
-  box-shadow: 0 14px 24px rgba(11, 103, 178, 0.2);
+  background: linear-gradient(135deg, #062a52 0%, #087a8f 100%);
+  border-color: #087a8f;
+  box-shadow: 0 14px 24px rgba(8, 122, 143, 0.22);
 }
 
 .button-lcl-check:hover,
 .button-lcl-check:focus-visible {
-  background: linear-gradient(135deg, #062a52 0%, #0a5798 100%);
+  background: linear-gradient(135deg, #05213f 0%, #056c7f 100%);
 }
 
 .button-form-dark {
@@ -1507,6 +1519,11 @@ h3 {
   .final-actions {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .hero-actions {
+    grid-template-columns: 1fr;
+    width: 100%;
   }
 
   .button {
