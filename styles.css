@@ -341,6 +341,18 @@ h3 {
   transform: none;
 }
 
+.button-lcl-check {
+  color: var(--white);
+  background: linear-gradient(135deg, #0a3b70 0%, #0b67b2 100%);
+  border-color: #0b67b2;
+  box-shadow: 0 14px 24px rgba(11, 103, 178, 0.2);
+}
+
+.button-lcl-check:hover,
+.button-lcl-check:focus-visible {
+  background: linear-gradient(135deg, #062a52 0%, #0a5798 100%);
+}
+
 .button-form-dark {
   color: var(--white);
   background: rgba(255, 255, 255, 0.18);

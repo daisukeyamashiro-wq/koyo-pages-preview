@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>上海発LCL 初期診断ツール | KOYO</title>
+    <meta name="description" content="上海発LCLのCBM、重量、貨物条件を入力し、正式見積前に確認すべきポイントを整理するKOYO向け初期診断ツールです。">
+    <link rel="stylesheet" href="lcl-check.css?v=20260609-5">
+  </head>
+  <body>
+    <main class="koyo-lcl-page">
+      <section class="koyo-lcl-hero" aria-labelledby="koyo-lcl-title">
+        <div class="koyo-lcl-container">
+          <header class="koyo-lcl-header">
+            <a class="koyo-lcl-brand" href="lcl-check.html" aria-label="KOYO 上海発LCL 初期診断ツール">
+              <span class="koyo-lcl-brand-mark">KOYO</span>
+              <span class="koyo-lcl-brand-text">Shanghai LCL Check</span>
+            </a>
+            <a class="koyo-lcl-header-link" href="mailto:info@koyo-jpn.biz?subject=%E4%B8%8A%E6%B5%B7%E7%99%BALCL%E6%AD%A3%E5%BC%8F%E8%A6%8B%E7%A9%8D%E4%BE%9D%E9%A0%BC">お問い合わせ</a>
+          </header>
+
+          <div class="koyo-lcl-hero-copy">
+            <h1 id="koyo-lcl-title">上海発LCL、出荷前に確認すべきポイントを30秒で整理</h1>
+            <p>
+              上海発LCLでは、貨物内容・重量・サイズ・船社/CFS条件により、通常混載で受けられない場合があります。CBM・重量・貨物条件を入力すると、正式見積前に確認すべきポイントを整理できます。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="koyo-lcl-tool" aria-label="上海発LCL 初期診断フォーム">
+        <div class="koyo-lcl-container koyo-lcl-tool-grid">
+          <form class="koyo-lcl-card koyo-lcl-form" id="koyo-lcl-form" novalidate>
+            <div class="koyo-lcl-card-head">
+              <span class="koyo-lcl-step">01</span>
+              <div>
+                <h2>出荷条件を入力</h2>
+                <p>正式見積前の確認事項を整理します。</p>
+              </div>
+            </div>
+
+            <div class="koyo-lcl-field-grid">
+              <label class="koyo-lcl-field" for="koyo-lcl-cbm">
+                <span>CBM</span>
+                <input id="koyo-lcl-cbm" name="cbm" type="number" min="0" step="0.01" inputmode="decimal" placeholder="例：1.25" required>
+              </label>
+
+              <label class="koyo-lcl-field" for="koyo-lcl-weight">
+                <span>G/W KGS</span>
+                <input id="koyo-lcl-weight" name="weight" type="number" min="0" step="0.01" inputmode="decimal" placeholder="例：850" required>
+              </label>
+            </div>
+
+            <label class="koyo-lcl-field" for="koyo-lcl-destination">
+              <span>仕向地</span>
+              <select id="koyo-lcl-destination" name="destination" required>
+                <option value="">選択してください</option>
+                <option value="tokyo">東京</option>
+                <option value="nagoya">名古屋</option>
+                <option value="osaka">大阪</option>
+              </select>
+            </label>
+
+            <fieldset class="koyo-lcl-condition-group">
+              <legend>A. 貨物リスク条件</legend>
+              <p class="koyo-lcl-help">一般貨物と特殊条件は同時選択できません。特殊条件は複数選択できます。</p>
+              <div class="koyo-lcl-check-grid">
+                <label class="koyo-lcl-check">
+                  <input type="checkbox" name="cargoRiskCondition" value="general" checked>
+                  <span>一般貨物</span>
+                </label>
+                <label class="koyo-lcl-check">
+                  <input type="checkbox" name="cargoRiskCondition" value="battery">
+                  <span>電池あり</span>
+                </label>
+                <label class="koyo-lcl-check">
+                  <input type="checkbox" name="cargoRiskCondition" value="liquid">
+                  <span>液体あり</span>
+                </label>
+                <label class="koyo-lcl-check">
+                  <input type="checkbox" name="cargoRiskCondition" value="magnet">
+                  <span>磁石あり</span>
+                </label>
+                <label class="koyo-lcl-check">
+                  <input type="checkbox" name="cargoRiskCondition" value="food">
+                  <span>食品あり</span>
+                </label>
+                <label class="koyo-lcl-check">
+                  <input type="checkbox" name="cargoRiskCondition" value="dangerous">
+                  <span>危険品の可能性あり</span>
+                </label>
+                <label class="koyo-lcl-check">
+                  <input type="checkbox" name="cargoRiskCondition" value="long">
+                  <span>長尺貨物</span>
+                </label>
+                <label class="koyo-lcl-check">
+                  <input type="checkbox" name="cargoRiskCondition" value="heavy">
+                  <span>重量物</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="koyo-lcl-condition-group">
+              <legend>B. 梱包状態</legend>
+              <p class="koyo-lcl-help">梱包状態は複数選択できます。一般貨物・特殊条件とは連動しません。</p>
+              <div class="koyo-lcl-check-grid">
+                <label class="koyo-lcl-check">
+                  <input type="checkbox" name="packingCondition" value="carton">
+                  <span>段ボール</span>
+                </label>
+                <label class="koyo-lcl-check">
+                  <input type="checkbox" name="packingCondition" value="wooden">
+                  <span>木箱・木枠</span>
+                </label>
+                <label class="koyo-lcl-check">
+                  <input type="checkbox" name="packingCondition" value="pallet">
+                  <span>パレット積み</span>
+                </label>
+                <label class="koyo-lcl-check">
+                  <input type="checkbox" name="packingCondition" value="plastic">
+                  <span>プラスチックケース・カートン</span>
+                </label>
+                <label class="koyo-lcl-check">
+                  <input type="checkbox" name="packingCondition" value="loose">
+                  <span>バラ積み</span>
+                </label>
+                <label class="koyo-lcl-check">
+                  <input type="checkbox" name="packingCondition" value="other">
+                  <span>その他</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <label class="koyo-lcl-field" for="koyo-lcl-remarks">
+              <span>備考</span>
+              <textarea id="koyo-lcl-remarks" name="remarks" rows="3" placeholder="貨物内容、特殊な取り扱い条件、希望納期などがあれば入力してください。"></textarea>
+            </label>
+
+            <div class="koyo-lcl-error" id="koyo-lcl-error" role="alert" hidden></div>
+
+            <button class="koyo-lcl-button koyo-lcl-button-primary" type="submit">診断する</button>
+          </form>
+
+          <section class="koyo-lcl-card koyo-lcl-result-card koyo-lcl-result-neutral" id="koyo-lcl-result" aria-live="polite">
+            <div class="koyo-lcl-card-head">
+              <span class="koyo-lcl-step">02</span>
+              <div>
+                <h2>診断結果</h2>
+                <p>入力後、ここに確認事項を表示します。</p>
+              </div>
+            </div>
+
+            <div class="koyo-lcl-empty" id="koyo-lcl-empty">
+              <p>CBM、重量、仕向地、貨物リスク条件を入力して「診断する」を押してください。</p>
+            </div>
+
+            <div class="koyo-lcl-result-body" id="koyo-lcl-result-body" hidden>
+              <div class="koyo-lcl-status-grid" aria-label="診断ステータス概要">
+                <div>
+                  <span>リスクレベル</span>
+                  <strong id="koyo-lcl-risk-level">-</strong>
+                </div>
+                <div>
+                  <span>日本側費用目安</span>
+                  <strong id="koyo-lcl-japan-cost">-</strong>
+                </div>
+                <div>
+                  <span>診断ステータス</span>
+                  <strong id="koyo-lcl-diagnosis-status">-</strong>
+                </div>
+              </div>
+
+              <div class="koyo-lcl-summary-grid">
+                <div>
+                  <span>仕向地</span>
+                  <strong id="koyo-lcl-result-destination">-</strong>
+                </div>
+                <div>
+                  <span>入力CBM</span>
+                  <strong id="koyo-lcl-result-cbm">-</strong>
+                </div>
+                <div>
+                  <span>入力重量</span>
+                  <strong id="koyo-lcl-result-weight">-</strong>
+                </div>
+                <div>
+                  <span>課金RT目安</span>
+                  <strong id="koyo-lcl-result-rt">-</strong>
+                </div>
+              </div>
+
+              <p class="koyo-lcl-rt-note">課金RTは目安です。実際の課金基準は船社・CFS・貨物形状・重量条件により異なります。</p>
+
+              <div class="koyo-lcl-estimate-box" id="koyo-lcl-japan-cost-box">
+                <h3>日本側費用目安</h3>
+                <p class="koyo-lcl-estimate-main" id="koyo-lcl-japan-cost-main">-</p>
+                <p class="koyo-lcl-estimate-note" id="koyo-lcl-japan-cost-note">-</p>
+              </div>
+
+              <div class="koyo-lcl-result-section">
+                <h3>初期診断結果</h3>
+                <ul class="koyo-lcl-result-list" id="koyo-lcl-diagnosis-list"></ul>
+              </div>
+
+              <div class="koyo-lcl-result-section">
+                <h3>仕向地別確認ポイント</h3>
+                <ul class="koyo-lcl-required-list" id="koyo-lcl-destination-note"></ul>
+              </div>
+
+              <div class="koyo-lcl-result-section">
+                <h3>正式見積に必要な情報</h3>
+                <ul class="koyo-lcl-required-list" id="koyo-lcl-required-list"></ul>
+              </div>
+
+              <div class="koyo-lcl-result-section">
+                <h3>注意事項</h3>
+                <ul class="koyo-lcl-caution-list" id="koyo-lcl-caution-list"></ul>
+              </div>
+
+              <a class="koyo-lcl-button koyo-lcl-button-mail" id="koyo-lcl-mail-button" href="#" aria-disabled="true">正式見積を依頼する</a>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="lcl-check.js?v=20260609-5"></script>
+  </body>
+</html>
