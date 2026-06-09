@@ -70,22 +70,42 @@ a {
 
 .koyo-lcl-brand {
   display: inline-flex;
-  align-items: baseline;
-  gap: 12px;
+  align-items: center;
+  gap: 10px;
   color: var(--koyo-lcl-navy);
+  font-weight: 800;
 }
 
-.koyo-lcl-brand-mark {
-  font-size: clamp(28px, 5vw, 42px);
-  line-height: 1;
-  font-weight: 900;
-  letter-spacing: 0;
+.koyo-lcl-brand-image {
+  display: block;
+  width: 82px;
+  height: auto;
+  max-height: 30px;
+  object-fit: contain;
+}
+
+.koyo-lcl-brand-divider {
+  width: 1px;
+  height: 22px;
+  background: var(--koyo-lcl-line);
+}
+
+.koyo-lcl-brand-copy {
+  display: grid;
+  gap: 1px;
+}
+
+.koyo-lcl-brand-company {
+  color: var(--koyo-lcl-navy);
+  font-size: 15px;
+  line-height: 1.2;
 }
 
 .koyo-lcl-brand-text {
   color: var(--koyo-lcl-muted);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 800;
+  line-height: 1.2;
 }
 
 .koyo-lcl-header-link {
@@ -602,6 +622,49 @@ a {
   margin-top: 18px;
 }
 
+.koyo-lcl-footer {
+  padding: 38px 0 28px;
+  color: var(--koyo-lcl-white);
+  background: var(--koyo-lcl-navy);
+}
+
+.koyo-lcl-footer-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.koyo-lcl-footer-brand {
+  margin: 0 0 6px;
+  font-weight: 900;
+}
+
+.koyo-lcl-footer-inner p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 700;
+}
+
+.koyo-lcl-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-weight: 800;
+}
+
+.koyo-lcl-footer-links a:hover,
+.koyo-lcl-footer-links a:focus-visible {
+  color: #bfe4f7;
+}
+
+.koyo-lcl-copyright {
+  width: min(calc(100% - 40px), 1180px);
+  margin: 24px auto 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+}
+
 @media (max-width: 920px) {
   .koyo-lcl-tool-grid {
     grid-template-columns: 1fr;
@@ -617,18 +680,12 @@ a {
     min-height: 68px;
   }
 
-  .koyo-lcl-brand {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 4px;
+  .koyo-lcl-brand-image {
+    width: 74px;
   }
 
-  .koyo-lcl-brand-mark {
-    font-size: 30px;
-  }
-
-  .koyo-lcl-brand-text {
-    font-size: 12px;
+  .koyo-lcl-brand-company {
+    font-size: 13px;
   }
 
   .koyo-lcl-header-link {
@@ -670,5 +727,14 @@ a {
 
   .koyo-lcl-summary-grid div:last-child {
     border-bottom: 0;
+  }
+
+  .koyo-lcl-footer-inner {
+    flex-direction: column;
+  }
+
+  .koyo-lcl-footer-links {
+    flex-direction: column;
+    gap: 8px;
   }
 }

@@ -6,8 +6,9 @@
 
   const japanSideCostConfig = {
     general: {
-      compact: "15,000〜25,000円程度\n※一般貨物・1BL・小口LCL・日本国内配送なしの場合\n※海上運賃別途",
-      detail: "15,000〜25,000円程度（一般貨物・1BL・小口LCL・日本国内配送なしの場合／海上運賃別途）",
+      minPerRt: 15000,
+      maxPerRt: 25000,
+      inquiryThresholdRt: 10,
       note: "上記は日本側ローカル費用の目安です。日本国内配送費、通関費用、税金、検査費用、特殊作業費は含みません。正式見積で確認します。",
     },
     individual: {
@@ -166,6 +167,10 @@
     }).format(value);
   }
 
+  function formatYenRange(minValue, maxValue) {
+    return `${formatNumber(Math.round(minValue), 0)}〜${formatNumber(Math.round(maxValue), 0)}円`;
+  }
+
   function getSelectedCargoRisks() {
     return cargoRiskInputs
       .filter((input) => input.checked)
@@ -238,9 +243,31 @@
     return "normal";
   }
 
-  // 課金RTは参考表示のみです。費用感は日本側費用の目安として別管理します。
-  function getJapanSideCost(isIndividualCost) {
-    return isIndividualCost ? japanSideCostConfig.individual : japanSideCostConfig.general;
+  // 一般貨物のみ、課金RT目安に応じて日本側ローカル費用の目安を出します。
+  function getJapanSideCost(isIndividualCost, chargeableRt) {
+    if (isIndividualCost) {
+      return japanSideCostConfig.individual;
+    }
+
+    const config = japanSideCostConfig.general;
+
+    if (chargeableRt >= config.inquiryThresholdRt) {
+      return {
+        compact: "要お問い合わせ\n※10CBM以上または課金RT10以上\n※海上運賃別途",
+        detail: "要お問い合わせ（10CBM以上または課金RT10以上／海上運賃別途）",
+        note: "10CBM以上または課金RT10以上の貨物は、CFS条件・作業条件・搬入形態により日本側ローカル費用が変動します。正式見積で確認します。",
+      };
+    }
+
+    const minCost = config.minPerRt * chargeableRt;
+    const maxCost = config.maxPerRt * chargeableRt;
+    const range = `${formatYenRange(minCost, maxCost)}程度`;
+
+    return {
+      compact: `${range}\n※一般貨物・1BL・小口LCL・日本国内配送なしの場合\n※海上運賃別途`,
+      detail: `${range}（一般貨物・1BL・小口LCL・日本国内配送なしの場合／海上運賃別途）`,
+      note: config.note,
+    };
   }
 
   function getStatusSummary(level, isIndividualCost, japanSideCost) {
@@ -397,7 +424,7 @@
     const packingLabels = packingConditions.map((condition) => packingConfig[condition]);
     const hasSpecialCondition = cargoRisks.some((condition) => condition !== "general");
     const isIndividualCost = hasSpecialCondition || weight >= 1000;
-    const japanSideCost = getJapanSideCost(isIndividualCost);
+    const japanSideCost = getJapanSideCost(isIndividualCost, chargeableRt);
     const statusSummary = getStatusSummary(level, isIndividualCost, japanSideCost);
 
     renderResult({
