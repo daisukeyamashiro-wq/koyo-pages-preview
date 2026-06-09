@@ -465,22 +465,34 @@ h3 {
 
 .panel-top {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: space-between;
-  gap: 16px;
+  gap: 14px;
   margin-bottom: 16px;
 }
 
 .panel-top h2 {
   margin-bottom: 0;
-  font-size: 22px;
+  font-size: clamp(20px, 2.1vw, 22px);
+  white-space: nowrap;
 }
 
 .panel-action {
-  min-height: 42px;
-  padding: 9px 14px;
+  min-height: 38px;
+  padding: 8px 13px;
+  color: var(--navy);
+  background: #f6c744;
+  border-color: #e7b735;
   font-size: 13px;
+  line-height: 1.2;
+  box-shadow: 0 12px 22px rgba(222, 169, 37, 0.22);
   white-space: nowrap;
+}
+
+.panel-action:hover,
+.panel-action:focus-visible {
+  color: var(--navy);
+  background: #ffd760;
 }
 
 .risk-meter {
