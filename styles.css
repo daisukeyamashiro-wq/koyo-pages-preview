@@ -929,6 +929,27 @@ h3 {
   box-shadow: 26px 0 0 var(--cyan), 34px -19px 0 -2px var(--navy);
 }
 
+.service-icon-factory::before {
+  left: 12px;
+  top: 17px;
+  width: 34px;
+  height: 27px;
+  background:
+    linear-gradient(135deg, transparent 0 48%, rgba(255, 255, 255, 0.32) 48% 52%, transparent 52%),
+    var(--navy);
+  border-radius: 4px;
+}
+
+.service-icon-factory::after {
+  left: 17px;
+  top: 10px;
+  width: 8px;
+  height: 14px;
+  background: var(--cyan);
+  border-radius: 3px 3px 0 0;
+  box-shadow: 12px 4px 0 -1px var(--blue), 23px 1px 0 -2px var(--cyan);
+}
+
 .service-number,
 .case-list span,
 .timeline span {
@@ -952,6 +973,148 @@ h3 {
 .timeline p {
   margin-bottom: 0;
   color: var(--muted);
+}
+
+.service-card-link {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 16px;
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.factory-hero .hero-grid {
+  min-height: 520px;
+}
+
+.factory-hero-lead {
+  color: var(--navy);
+  font-size: clamp(18px, 2.1vw, 22px);
+  font-weight: 900;
+}
+
+.factory-panel .panel-top {
+  align-items: flex-start;
+}
+
+.factory-flow {
+  display: grid;
+  gap: 12px;
+}
+
+.factory-flow article {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 12px;
+  padding: 14px;
+  background: #fbfdff;
+  border: 1px solid #dce9f2;
+  border-radius: 7px;
+}
+
+.factory-flow span {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  color: var(--white);
+  background: var(--navy);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.factory-flow h3 {
+  margin: 0 0 2px;
+  font-size: 16px;
+}
+
+.factory-flow p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.pricing-card {
+  display: flex;
+  min-height: 360px;
+  flex-direction: column;
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-small);
+}
+
+.pricing-card-featured {
+  border-color: #8fc8e7;
+  box-shadow: var(--shadow);
+}
+
+.pricing-card-additional {
+  background: #fbfdff;
+}
+
+.pricing-card h3 {
+  margin-bottom: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.pricing-price {
+  margin: 0;
+  color: var(--navy);
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.pricing-note {
+  margin: 6px 0 18px;
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.pricing-card ul {
+  display: grid;
+  gap: 10px;
+  margin: auto 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pricing-card li {
+  position: relative;
+  padding-left: 22px;
+  color: #30475f;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.pricing-card li::before {
+  position: absolute;
+  top: 0.68em;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  background: var(--cyan);
+  border-radius: 3px;
+  content: "";
+}
+
+.factory-timeline article {
+  min-height: 250px;
 }
 
 .cargo-grid {
@@ -1369,6 +1532,7 @@ h3 {
 
   .issue-grid,
   .service-grid,
+  .pricing-grid,
   .timeline,
   .faq-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1489,6 +1653,7 @@ h3 {
   .issue-grid,
   .service-grid,
   .cargo-grid,
+  .pricing-grid,
   .timeline,
   .faq-list,
   .info-checklist,

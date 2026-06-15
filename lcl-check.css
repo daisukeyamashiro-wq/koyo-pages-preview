@@ -355,6 +355,12 @@ a {
   box-shadow: 0 10px 22px rgba(6, 42, 82, 0.18);
 }
 
+.koyo-lcl-button-secondary {
+  color: var(--koyo-lcl-navy);
+  background: var(--koyo-lcl-white);
+  border: 1px solid #9bb9d2;
+}
+
 .koyo-lcl-button-primary:hover,
 .koyo-lcl-button-mail:hover {
   background: var(--koyo-lcl-navy-2);
@@ -645,6 +651,28 @@ a {
 
 .koyo-lcl-button-mail {
   margin-top: 18px;
+}
+
+.koyo-lcl-factory-cta {
+  margin-top: 18px;
+  padding: 16px;
+  background: var(--koyo-lcl-soft-blue);
+  border: 1px solid #cce3f3;
+  border-radius: 6px;
+}
+
+.koyo-lcl-factory-cta h3 {
+  margin: 0 0 8px;
+  color: var(--koyo-lcl-navy);
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.koyo-lcl-factory-cta p {
+  margin: 0 0 12px;
+  color: #34465a;
+  font-size: 14px;
+  line-height: 1.65;
 }
 
 .koyo-lcl-footer {
