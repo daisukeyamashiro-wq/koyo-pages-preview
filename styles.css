@@ -515,6 +515,10 @@ h3 {
   gap: 10px;
 }
 
+.dashboard-list-compact {
+  margin-top: 16px;
+}
+
 @media (min-width: 1061px) {
   .dashboard-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -579,6 +583,19 @@ h3 {
   border-radius: 7px;
   font-size: 13px;
   line-height: 1.6;
+}
+
+.hero-visual {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .visual-brief {
@@ -704,11 +721,18 @@ h3 {
   gap: 16px;
 }
 
+.entry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
 .issue-grid {
   align-items: stretch;
 }
 
 .issue-grid article,
+.entry-grid article,
 .service-grid article,
 .cargo-card,
 .case-list article,
@@ -731,6 +755,30 @@ h3 {
   font-size: 15px;
   font-weight: 800;
   line-height: 1.55;
+}
+
+.entry-grid article {
+  display: flex;
+  min-height: 280px;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.entry-grid .button {
+  width: 100%;
+  margin-top: auto;
+}
+
+.entry-kicker {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 16px;
+  padding: 6px 10px;
+  color: var(--blue);
+  background: #eaf6fc;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
 }
 
 .split-layout {
@@ -777,6 +825,16 @@ h3 {
 .service-grid article {
   min-height: 260px;
   padding: 24px;
+}
+
+.service-grid-compact article {
+  display: flex;
+  min-height: 300px;
+  flex-direction: column;
+}
+
+.service-grid-compact .service-card-link {
+  margin-top: auto;
 }
 
 .service-card-top {
@@ -1587,6 +1645,7 @@ h3 {
   }
 
   .issue-grid,
+  .entry-grid,
   .service-grid,
   .pricing-grid,
   .timeline,
@@ -1707,6 +1766,7 @@ h3 {
   }
 
   .issue-grid,
+  .entry-grid,
   .service-grid,
   .cargo-grid,
   .pricing-grid,
