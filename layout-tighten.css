@@ -1,0 +1,189 @@
+/* Hero and Check Points layout tightening overrides. */
+.hero-grid {
+  min-height: 520px;
+  grid-template-columns: minmax(0, 1.14fr) minmax(390px, 0.86fr);
+  gap: 32px;
+  padding: 58px 0 52px;
+}
+
+.hero h1 {
+  max-width: 720px;
+  margin-bottom: 16px;
+  font-size: clamp(52px, 4.8vw, 66px);
+  line-height: 1.08;
+}
+
+.hero-text {
+  max-width: 650px;
+  line-height: 1.75;
+}
+
+.hero-actions {
+  width: min(100%, 540px);
+  gap: 10px;
+}
+
+.hero-actions .button {
+  min-height: 52px;
+}
+
+.hero-actions .button-primary {
+  min-height: 56px;
+}
+
+.diagnostic-panel {
+  padding: 16px;
+}
+
+.panel-top {
+  margin-bottom: 12px;
+}
+
+.shipment-visual {
+  gap: 10px;
+  padding: 12px;
+}
+
+.route-map {
+  grid-template-columns: 100px minmax(0, 1fr) 116px;
+  gap: 8px;
+}
+
+.route-node {
+  min-height: 78px;
+  gap: 5px;
+  padding: 8px;
+}
+
+.sea-lane {
+  min-height: 92px;
+}
+
+.ship-svg {
+  width: min(188px, 100%);
+  padding: 5px;
+}
+
+.document-row,
+.partner-row {
+  gap: 7px;
+}
+
+.document-row span,
+.partner-row span {
+  min-height: 40px;
+  padding: 6px;
+}
+
+.dashboard-list {
+  gap: 8px;
+}
+
+.dashboard-list-compact {
+  margin-top: 12px;
+}
+
+.dashboard-list article {
+  position: relative;
+  grid-template-columns: 38px minmax(0, 1fr) auto;
+  gap: 10px;
+  padding: 9px 42px 9px 9px;
+}
+
+.dashboard-list p {
+  font-size: 12px;
+  line-height: 1.42;
+}
+
+.dashboard-list strong {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+}
+
+.dash-icon {
+  width: 34px;
+  height: 34px;
+}
+
+.panel-foot {
+  margin-top: 10px;
+  padding: 8px 10px;
+  line-height: 1.45;
+}
+
+.split-layout {
+  gap: 40px;
+}
+
+#checks.section {
+  padding: 72px 0;
+}
+
+#checks .split-layout > div:first-child {
+  max-width: 500px;
+}
+
+#checks h2 {
+  margin-bottom: 14px;
+  font-size: clamp(30px, 3.45vw, 43px);
+  line-height: 1.22;
+}
+
+#checks .split-layout > div:first-child p:not(.section-label) {
+  margin-bottom: 18px;
+  line-height: 1.7;
+}
+
+#checks .button {
+  min-width: min(100%, 310px);
+}
+
+.check-panel {
+  align-self: start;
+  padding: 30px 24px 28px;
+}
+
+.check-list {
+  gap: 11px;
+}
+
+.check-list li,
+.cargo-card li {
+  line-height: 1.68;
+}
+
+@media (min-width: 1061px) {
+  .dashboard-list article {
+    grid-template-columns: 34px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 780px) {
+  .hero h1 {
+    font-size: clamp(39px, 10.5vw, 45px);
+    line-height: 1.1;
+  }
+
+  .route-map {
+    grid-template-columns: 74px minmax(92px, 1fr) 84px;
+    gap: 6px;
+  }
+
+  .sea-lane {
+    min-height: 70px;
+  }
+
+  .sea-lane::after {
+    right: -1px;
+    top: calc(50% - 5px);
+    bottom: auto;
+    transform: rotate(45deg);
+  }
+
+  .dashboard-list strong {
+    position: absolute;
+    top: 9px;
+    right: 9px;
+  }
+}
