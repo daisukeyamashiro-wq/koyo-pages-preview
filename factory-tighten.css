@@ -1,0 +1,217 @@
+/* Factory Check page tightening overrides. */
+.factory-hero .hero-grid {
+  min-height: 500px;
+  grid-template-columns: minmax(0, 1.04fr) minmax(380px, 0.96fr);
+  gap: 30px;
+  padding: 46px 0 42px;
+}
+
+.factory-hero h1 {
+  max-width: 720px;
+  margin-bottom: 14px;
+  font-size: clamp(58px, 6vw, 82px);
+  line-height: 1.06;
+}
+
+.factory-hero .hero-text {
+  margin-bottom: 12px;
+}
+
+.factory-hero .hero-note {
+  max-width: 660px;
+  margin-bottom: 14px;
+  line-height: 1.62;
+}
+
+.factory-hero .hero-actions {
+  gap: 9px;
+}
+
+.factory-hero .hero-actions .button {
+  min-height: 50px;
+}
+
+.factory-panel {
+  padding: 16px;
+}
+
+.factory-panel .panel-top {
+  margin-bottom: 12px;
+}
+
+.factory-flow {
+  gap: 8px;
+}
+
+.factory-flow article {
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+.factory-flow span {
+  width: 34px;
+  height: 34px;
+}
+
+.factory-flow h3 {
+  font-size: 15px;
+}
+
+.factory-flow p {
+  line-height: 1.48;
+}
+
+.factory-flow-visual article:not(:last-child)::after {
+  bottom: -8px;
+  width: 10px;
+  height: 10px;
+}
+
+#service .split-layout {
+  grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.86fr);
+  gap: 34px;
+  align-items: start;
+}
+
+#service h2 {
+  margin-bottom: 14px;
+  font-size: clamp(30px, 3.35vw, 42px);
+  line-height: 1.24;
+}
+
+#service .split-layout > div:first-child > p:not(.section-label) {
+  max-width: 620px;
+  line-height: 1.74;
+}
+
+#service .caution {
+  max-width: 620px;
+  margin-top: 18px;
+  padding: 14px 16px;
+  line-height: 1.62;
+}
+
+#service .check-panel {
+  padding: 22px 20px;
+}
+
+#service .check-list {
+  gap: 9px;
+}
+
+#service .check-list li {
+  line-height: 1.58;
+}
+
+.pricing-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.pricing-card {
+  min-height: 320px;
+  padding: 22px 18px;
+}
+
+.pricing-price {
+  font-size: clamp(22px, 2vw, 28px);
+}
+
+.factory-timeline article {
+  min-height: 270px;
+}
+
+.timeline-icon-mail::before {
+  left: 9px;
+  top: 12px;
+  width: 24px;
+  height: 18px;
+  background: var(--white);
+  border: 2px solid var(--navy);
+  border-radius: 4px;
+}
+
+.timeline-icon-mail::after {
+  left: 12px;
+  top: 15px;
+  width: 18px;
+  height: 13px;
+  border-right: 2px solid var(--blue);
+  border-bottom: 2px solid var(--blue);
+  transform: skewY(-28deg) rotate(45deg);
+}
+
+.timeline-icon-translate::before {
+  left: 9px;
+  top: 10px;
+  width: 24px;
+  height: 20px;
+  background: var(--white);
+  border: 2px solid var(--navy);
+  border-radius: 5px;
+}
+
+.timeline-icon-translate::after {
+  left: 14px;
+  top: 15px;
+  width: 15px;
+  height: 3px;
+  background: var(--blue);
+  border-radius: 999px;
+  box-shadow: 0 7px 0 var(--cyan);
+}
+
+.timeline-icon-quote::before {
+  left: 8px;
+  top: 14px;
+  width: 26px;
+  height: 18px;
+  background: var(--blue);
+  border-radius: 3px 3px 9px 9px;
+}
+
+.timeline-icon-quote::after {
+  left: 13px;
+  top: 8px;
+  width: 17px;
+  height: 12px;
+  background: var(--white);
+  border: 2px solid var(--navy);
+  border-radius: 4px;
+  box-shadow: 5px 15px 0 -5px var(--cyan);
+}
+
+@media (max-width: 1060px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 780px) {
+  .factory-hero .hero-grid {
+    gap: 24px;
+    padding: 28px 0 34px;
+  }
+
+  .factory-hero h1 {
+    font-size: clamp(40px, 11.2vw, 48px);
+    line-height: 1.08;
+  }
+
+  .factory-panel {
+    padding: 14px;
+  }
+
+  .factory-flow {
+    gap: 7px;
+  }
+
+  .factory-flow article {
+    padding: 9px;
+  }
+
+  #service .split-layout,
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}
