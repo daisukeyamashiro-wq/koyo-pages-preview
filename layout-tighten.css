@@ -237,3 +237,139 @@
     line-height: 1.24;
   }
 }
+
+/* Shared mobile overflow guard for the top page. */
+@media (max-width: 780px) {
+  .container,
+  .header-inner {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .header-inner {
+    min-height: 68px;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .brand {
+    min-width: 0;
+    max-width: calc(100% - 56px);
+    gap: 8px;
+  }
+
+  .brand-divider,
+  .brand-image,
+  .nav-toggle {
+    flex: 0 0 auto;
+  }
+
+  .brand-company {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .hero-copy,
+  .section-heading {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .diagnostic-panel::before {
+    inset: 12px auto 12px 0;
+    width: 4px;
+    height: auto;
+  }
+
+  .panel-top h2 {
+    white-space: normal;
+  }
+
+  .issue-grid,
+  .issue-diagram,
+  .entry-grid,
+  .service-grid,
+  .cargo-grid,
+  .pricing-grid,
+  .timeline,
+  .faq-list,
+  .info-checklist,
+  .mini-flow,
+  .factory-route-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .final-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container,
+  .header-inner {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .header-inner {
+    min-height: 64px;
+  }
+
+  .brand {
+    max-width: calc(100% - 52px);
+    gap: 7px;
+  }
+
+  .brand-image {
+    width: 68px;
+    max-height: 26px;
+  }
+
+  .nav-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .site-nav {
+    top: 64px;
+    right: 14px;
+    left: 14px;
+  }
+
+  .hero-text {
+    font-size: 14.5px;
+    line-height: 1.72;
+  }
+
+  .hero-note {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .hero-actions .button {
+    min-height: 48px;
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .diagnostic-panel,
+  .entry-grid article,
+  .service-grid article,
+  .cargo-card,
+  .pricing-card,
+  .pricing-conditions,
+  .check-panel,
+  .info-checklist {
+    padding: 16px;
+  }
+}
