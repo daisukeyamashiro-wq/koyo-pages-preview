@@ -187,3 +187,53 @@
     right: 9px;
   }
 }
+
+/* Keep the tightened desktop layout from forcing mobile overflow. */
+@media (max-width: 780px) {
+  .hero-grid {
+    min-height: auto;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+    padding: 28px 0 32px;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: break-word;
+    text-wrap: balance;
+    font-size: clamp(30px, 8.2vw, 38px);
+    line-height: 1.22;
+  }
+
+  .hero-text,
+  .hero-actions,
+  .diagnostic-panel {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .diagnostic-panel {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-grid {
+    gap: 18px;
+    padding: 22px 0 28px;
+  }
+
+  .hero h1 {
+    font-size: clamp(28px, 8vw, 34px);
+    line-height: 1.24;
+  }
+}
