@@ -1,9 +1,6 @@
 (function () {
   "use strict";
 
-  const MAIL_TO = "info@koyo-jpn.biz";
-  const MAIL_SUBJECT = "上海発LCL正式見積依頼";
-
   const japanSideCostConfig = {
     general: {
       minPerRt: 15000,
@@ -332,40 +329,20 @@
     });
   }
 
-  function buildMailBody(result) {
+  function buildDiagnosisMailLines(result) {
     return [
-      "KOYO 御中",
-      "",
-      "上海発LCLの正式見積を依頼します。",
-      "",
-      "【入力内容】",
+      "【LCL初期診断の入力内容】",
       `仕向地：${result.destinationLabel}`,
-      `入力CBM：${formatNumber(result.cbm, 2)} CBM`,
-      `入力重量：${formatWeight(result.weight)} KGS`,
+      `CBM：${formatNumber(result.cbm, 2)} CBM`,
+      `重量：${formatWeight(result.weight)} KGS`,
       `課金RT目安：${formatNumber(result.chargeableRt, 2)} RT`,
-      `貨物リスク条件：${result.cargoRiskLabels.join("、")}`,
+      `貨物条件：${result.cargoRiskLabels.join("、")}`,
       `梱包状態：${result.packingLabels.length > 0 ? result.packingLabels.join("、") : "未選択"}`,
       `備考：${result.remarks || "未記入"}`,
       `日本側費用目安：${result.japanSideCost.detail}`,
-      "海上運賃：別途正式見積",
-      "",
-      "【初期診断結果】",
+      `診断結果：${result.statusSummary.riskLevel} / ${result.statusSummary.diagnosisStatus}`,
       ...result.diagnosisMessages.map((message) => `・${message}`),
-      "",
-      "【仕向地別確認ポイント】",
-      ...result.destinationNotes.map((note) => `・${note}`),
-      "",
-      "【追加記入欄】",
-      "貨物内容：",
-      "HS CODE：",
-      "INVOICE / PACKING LIST：",
-      "サイズ明細：",
-      "製品写真：",
-      "希望納期：",
-      "日本側配送有無：",
-      "",
-      "以上、よろしくお願いいたします。",
-    ].join("\n");
+    ];
   }
 
   function updateResultClass(level) {
@@ -394,8 +371,13 @@
     renderList(resultNodes.requiredList, requiredInfo);
     renderList(resultNodes.cautionList, cautions);
 
-    const mailBody = buildMailBody(result);
-    const mailHref = `mailto:${MAIL_TO}?subject=${encodeURIComponent(MAIL_SUBJECT)}&body=${encodeURIComponent(mailBody)}`;
+    if (typeof window.buildContactMailto !== "function") {
+      mailButton.setAttribute("aria-disabled", "true");
+      showError("問い合わせメールを準備できませんでした。ページを再読み込みしてください。");
+      return;
+    }
+
+    const mailHref = window.buildContactMailto(buildDiagnosisMailLines(result));
     mailButton.setAttribute("href", mailHref);
     mailButton.setAttribute("aria-disabled", "false");
   }

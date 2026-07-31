@@ -1,23 +1,52 @@
+// 問い合わせメールの宛先・件名・本文を管理
+// 問い合わせ先変更時はCONTACT_CONFIGのみ修正
 const CONTACT_CONFIG = {
   email: "info@koyo-jpn.biz",
-  subject: "中国→日本物流の事前確認依頼",
+  subject: "中国発日本向け輸送のご相談",
   formUrl: "https://forms.gle/NN2nh1cTJW4Bq4Ee6",
   body: [
+    "株式会社幸洋 ご担当者様",
+    "",
+    "中国発日本向け輸送について相談いたします。",
+    "",
     "会社名：",
     "ご担当者名：",
-    "貨物名：",
-    "出荷地：",
-    "日本側仕向地：",
-    "希望輸送形態：LCL / FCL / 未定",
-    "希望納期：",
-    "サイズ・重量・M3：",
-    "電池・液体・粉末・磁石・化学品の有無：",
-    "添付資料：Invoice / Packing List / SDS / MSDS / UN38.3 / 商品写真",
+    "商品名・用途：",
+    "中国側出荷地：",
+    "日本側納品先：",
+    "数量・梱包数：",
+    "総重量・容積（CBM）：",
+    "希望出荷時期：",
+    "希望輸送形態（LCL・FCL・未定）：",
+    "電池・液体・粉末・磁石等の有無：",
     "相談内容：",
+    "",
+    "現在準備できる資料：",
+    "・Invoice",
+    "・Packing List",
+    "・商品写真",
+    "・SDS、MSDS",
+    "・UN38.3",
+    "・その他",
+    "※該当するものを残してください。",
+    "",
+    "よろしくお願いいたします。",
   ].join("\n"),
 };
 
-const contactHref = `mailto:${CONTACT_CONFIG.email}?subject=${encodeURIComponent(CONTACT_CONFIG.subject)}&body=${encodeURIComponent(CONTACT_CONFIG.body)}`;
+const buildContactMailto = (additionalBodyLines = []) => {
+  const additionalBody = additionalBodyLines.filter(Boolean).join("\n");
+  const body = additionalBody
+    ? `${CONTACT_CONFIG.body}\n\n${additionalBody}`
+    : CONTACT_CONFIG.body;
+
+  return `mailto:${CONTACT_CONFIG.email}?subject=${encodeURIComponent(CONTACT_CONFIG.subject)}&body=${encodeURIComponent(body)}`;
+};
+
+window.CONTACT_CONFIG = CONTACT_CONFIG;
+window.buildContactMailto = buildContactMailto;
+
+const contactHref = buildContactMailto();
 
 const header = document.querySelector("[data-header]");
 const navToggle = document.querySelector(".nav-toggle");
@@ -28,6 +57,7 @@ const faqButtons = document.querySelectorAll(".faq-item button");
 const contactToast = document.querySelector("[data-contact-toast]");
 const contactToastMessage = document.querySelector("[data-contact-toast-message]");
 const copyEmailButtons = document.querySelectorAll("[data-copy-email]");
+const contactEmailLabels = document.querySelectorAll("[data-contact-email]");
 
 const showContactToast = (message) => {
   if (!contactToast) return;
@@ -62,8 +92,12 @@ const copyText = async (text) => {
 contactLinks.forEach((link) => {
   link.href = contactHref;
   link.addEventListener("click", () => {
-    showContactToast("メールアプリが開かない場合は info@koyo-jpn.biz 宛てに直接ご連絡ください。");
+    showContactToast(`メールアプリが開かない場合は ${CONTACT_CONFIG.email} 宛てに直接ご連絡ください。`);
   });
+});
+
+contactEmailLabels.forEach((label) => {
+  label.textContent = CONTACT_CONFIG.email;
 });
 
 formLinks.forEach((link) => {

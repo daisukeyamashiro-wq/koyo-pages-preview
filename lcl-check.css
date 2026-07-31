@@ -653,6 +653,13 @@ a {
   margin-top: 18px;
 }
 
+.koyo-lcl-contact-note {
+  margin: 9px 0 0;
+  color: var(--koyo-lcl-muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
 .koyo-lcl-factory-cta {
   margin-top: 18px;
   padding: 16px;

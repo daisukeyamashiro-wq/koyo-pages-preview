@@ -279,6 +279,14 @@ h3 {
   font-weight: 800;
 }
 
+.hero-contact-note {
+  margin: -2px 0 0;
+  color: #425b70;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.65;
+}
+
 .hero-actions,
 .final-actions {
   display: flex;
