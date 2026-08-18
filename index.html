@@ -13,8 +13,8 @@
     <meta property="og:site_name" content="株式会社幸洋">
     <meta name="theme-color" content="#062a52">
     <link rel="canonical" href="https://koyo-jpn.biz/">
-    <link rel="stylesheet" href="styles.css?v=mobile-fix-20260617b">
-    <link rel="stylesheet" href="layout-tighten.css?v=mobile-fix-20260617b">
+    <link rel="stylesheet" href="styles.css?v=scroll-story-20260818b">
+    <link rel="stylesheet" href="layout-tighten.css?v=scroll-story-20260818b">
     <style>
       .hero-actions .button-primary { grid-column: 1 / -1; min-height: 58px; font-size: 16px; box-shadow: 0 18px 32px rgba(6, 42, 82, 0.22); }
       .hero-secondary-action, .button-lcl-check.hero-secondary-action { color: var(--navy); background: var(--white); border-color: #9bb9d2; box-shadow: 0 8px 18px rgba(9, 42, 82, 0.08); }
@@ -90,6 +90,84 @@
     </header>
 
     <main id="main">
+      <section class="ocean-story" id="journey" data-ocean-story aria-labelledby="journey-title">
+        <div class="ocean-story-sticky">
+          <div class="ocean-story-media" aria-hidden="true">
+            <figure class="ocean-story-scene is-active" data-story-scene>
+              <img src="assets/story/scene-01-factory.webp" alt="" fetchpriority="high">
+            </figure>
+            <figure class="ocean-story-scene" data-story-scene>
+              <img src="assets/story/scene-02-cfs.webp" alt="" loading="eager">
+            </figure>
+            <figure class="ocean-story-scene" data-story-scene>
+              <img src="assets/story/scene-03-vessel.webp" alt="" loading="lazy">
+            </figure>
+            <figure class="ocean-story-scene" data-story-scene>
+              <img src="assets/story/scene-04-japan-port.webp" alt="" loading="lazy">
+            </figure>
+            <figure class="ocean-story-scene" data-story-scene>
+              <img src="assets/story/scene-05-delivery.webp" alt="" loading="lazy">
+            </figure>
+          </div>
+          <div class="ocean-story-shade" aria-hidden="true"></div>
+
+          <div class="ocean-story-topbar">
+            <p><span>KOYO</span> 中国から日本へ、貨物が動くまで</p>
+            <p class="ocean-story-hint">SCROLL TO FOLLOW THE ROUTE</p>
+          </div>
+
+          <div class="ocean-story-copy-layer">
+            <article class="ocean-story-copy is-active" data-story-copy>
+              <p class="ocean-story-kicker">01　中国工場・出荷前確認</p>
+              <h1 class="ocean-story-fixed-lines" id="journey-title"><span>貨物が、本当に</span><span>動かせる日から。</span></h1>
+              <p>完成日、集荷可能日、梱包、件数、重量、CBM。船期を決める前に、中国工場の情報を整理します。</p>
+              <span>FACTORY CHECK</span>
+            </article>
+            <article class="ocean-story-copy" data-story-copy>
+              <p class="ocean-story-kicker">02　上海CFS・搬入前確認</p>
+              <h2 class="ocean-story-fixed-lines"><span>CFSへ入る前に</span><span>止まる原因を潰す。</span></h2>
+              <p>Invoice、Packing List、SDS。電池・液体・粉末・磁石など、追加確認が必要な条件を搬入前に確認します。</p>
+              <span>DOCUMENTS &amp; CARGO</span>
+            </article>
+            <article class="ocean-story-copy" data-story-copy>
+              <p class="ocean-story-kicker">03　船社・海上輸送</p>
+              <h2 class="ocean-story-fixed-lines"><span>条件が揃って、</span><span>初めて船は選べる。</span></h2>
+              <p>LCLかFCLか。船社受託条件、CFS制約、納期と費用を照合し、現実的な航路を組み立てます。</p>
+              <span>OCEAN FREIGHT</span>
+            </article>
+            <article class="ocean-story-copy" data-story-copy>
+              <p class="ocean-story-kicker">04　日本港・通関</p>
+              <h2 class="ocean-story-fixed-lines"><span>到着後から</span><span>逆算して、</span><span>出荷を決める。</span></h2>
+              <p>日本側の輸入通関、CFS搬出、配送条件まで確認。港に着くことではなく、納品できることを基準に考えます。</p>
+              <span>CUSTOMS &amp; DELIVERY PLAN</span>
+            </article>
+            <article class="ocean-story-copy" data-story-copy>
+              <p class="ocean-story-kicker">05　日本国内配送・納品</p>
+              <h2 class="ocean-story-fixed-lines"><span>中国から日本へ</span><span class="ocean-story-desktop-line">見えない条件までつなぐ</span><span class="ocean-story-mobile-line">見えない条件まで</span><span class="ocean-story-mobile-line">つなぐ</span></h2>
+              <p>工場、船社、CFS、通関、配送。それぞれの条件と責任範囲を整理し、貨物を次の地点へつなぎます。</p>
+              <div class="ocean-story-actions">
+                <a class="ocean-story-cta" href="#" data-contact-link>輸送条件を相談する</a>
+                <a class="ocean-story-next" href="#top">詳しいサービスを見る</a>
+              </div>
+            </article>
+          </div>
+
+          <nav class="ocean-story-rail" aria-label="輸送ストーリーの場面">
+            <button class="is-active" type="button" data-story-jump="0" aria-label="中国工場へ" aria-current="step"><span>Factory</span></button>
+            <button type="button" data-story-jump="1" aria-label="上海CFSへ"><span>CFS</span></button>
+            <button type="button" data-story-jump="2" aria-label="海上輸送へ"><span>Ocean</span></button>
+            <button type="button" data-story-jump="3" aria-label="日本港へ"><span>Japan</span></button>
+            <button type="button" data-story-jump="4" aria-label="納品へ"><span>Delivery</span></button>
+          </nav>
+
+          <div class="ocean-story-footer">
+            <div class="ocean-story-scroll-cue"><i aria-hidden="true"></i><span>スクロールで貨物を動かす</span></div>
+            <div class="ocean-story-progress" aria-hidden="true"><i></i></div>
+            <span data-story-counter>01 / 05</span>
+          </div>
+        </div>
+      </section>
+
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="container hero-grid">
           <div class="hero-copy">
@@ -538,6 +616,6 @@
       <button type="button" data-copy-email>コピー</button>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=scroll-story-20260818b"></script>
   </body>
 </html>

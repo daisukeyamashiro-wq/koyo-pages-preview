@@ -155,3 +155,112 @@ copyEmailButtons.forEach((button) => {
     }
   });
 });
+
+// 中国工場から日本納品までのスクロールストーリー
+const oceanStory = document.querySelector("[data-ocean-story]");
+
+if (oceanStory) {
+  const storySticky = oceanStory.querySelector(".ocean-story-sticky");
+  const storyScenes = [...oceanStory.querySelectorAll("[data-story-scene]")];
+  const storyCopies = [...oceanStory.querySelectorAll("[data-story-copy]")];
+  const storyJumps = [...oceanStory.querySelectorAll("[data-story-jump]")];
+  const storyCounter = oceanStory.querySelector("[data-story-counter]");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let activeStoryScene = 0;
+  let storyFrame = 0;
+
+  const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
+  const smoothstep = (value) => {
+    const progress = clamp(value);
+    return progress * progress * (3 - (2 * progress));
+  };
+
+  const setActiveStoryScene = (index) => {
+    if (index === activeStoryScene) return;
+    activeStoryScene = index;
+
+    storyCopies.forEach((copy, copyIndex) => {
+      const isActive = copyIndex === index;
+      copy.classList.toggle("is-active", isActive);
+      copy.setAttribute("aria-hidden", String(!isActive));
+    });
+
+    storyJumps.forEach((button, buttonIndex) => {
+      const isActive = buttonIndex === index;
+      button.classList.toggle("is-active", isActive);
+      if (isActive) {
+        button.setAttribute("aria-current", "step");
+      } else {
+        button.removeAttribute("aria-current");
+      }
+    });
+
+    if (storyCounter) {
+      storyCounter.textContent = `${String(index + 1).padStart(2, "0")} / ${String(storyScenes.length).padStart(2, "0")}`;
+    }
+  };
+
+  const updateOceanStory = () => {
+    storyFrame = 0;
+    if (reducedMotion.matches || !storySticky || storyScenes.length < 2) return;
+
+    const headerHeight = header?.offsetHeight || 0;
+    const rect = oceanStory.getBoundingClientRect();
+    const travel = Math.max(1, oceanStory.offsetHeight - storySticky.offsetHeight);
+    const progress = clamp((headerHeight - rect.top) / travel);
+    const exactScene = progress * (storyScenes.length - 1);
+    const baseScene = Math.min(storyScenes.length - 1, Math.floor(exactScene));
+    const localProgress = exactScene - baseScene;
+    const blend = smoothstep((localProgress - 0.2) / 0.6);
+
+    storyScenes.forEach((scene, index) => {
+      let opacity = 0;
+      let sceneProgress = 0;
+
+      if (index < baseScene) {
+        sceneProgress = 1;
+      } else if (index === baseScene) {
+        opacity = baseScene === storyScenes.length - 1 ? 1 : 1 - blend;
+        sceneProgress = localProgress;
+      } else if (index === baseScene + 1) {
+        opacity = blend;
+        sceneProgress = localProgress;
+      }
+
+      const direction = index % 2 === 0 ? 1 : -1;
+      scene.style.setProperty("--scene-opacity", opacity.toFixed(3));
+      scene.style.setProperty("--scene-scale", (1.075 - (sceneProgress * 0.04)).toFixed(4));
+      scene.style.setProperty("--scene-shift", `${(direction * (1 - sceneProgress) * 0.7).toFixed(3)}%`);
+    });
+
+    const nextActive = Math.min(storyScenes.length - 1, Math.round(exactScene));
+    setActiveStoryScene(nextActive);
+    oceanStory.style.setProperty("--story-progress", progress.toFixed(4));
+  };
+
+  const requestStoryUpdate = () => {
+    if (storyFrame) return;
+    storyFrame = window.requestAnimationFrame(updateOceanStory);
+  };
+
+  storyJumps.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      const headerHeight = header?.offsetHeight || 0;
+      const travel = Math.max(1, oceanStory.offsetHeight - (storySticky?.offsetHeight || window.innerHeight));
+      const ratio = index / Math.max(1, storyScenes.length - 1);
+      window.scrollTo({
+        top: oceanStory.offsetTop - headerHeight + (travel * ratio),
+        behavior: reducedMotion.matches ? "auto" : "smooth",
+      });
+    });
+  });
+
+  storyCopies.forEach((copy, index) => {
+    copy.setAttribute("aria-hidden", String(index !== 0));
+  });
+
+  window.addEventListener("scroll", requestStoryUpdate, { passive: true });
+  window.addEventListener("resize", requestStoryUpdate);
+  reducedMotion.addEventListener?.("change", requestStoryUpdate);
+  requestStoryUpdate();
+}
