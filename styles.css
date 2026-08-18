@@ -1,17 +1,17 @@
 :root {
-  --ink: #102033;
-  --navy: #062a52;
-  --navy-2: #0a3b70;
-  --blue: #0b67b2;
-  --cyan: #1d9bd1;
-  --muted: #5e6c7c;
-  --line: #dbe6ee;
-  --soft: #f3f7fa;
-  --soft-blue: #eaf5fb;
-  --white: #ffffff;
+  --ink: #11283a;
+  --navy: #062b4a;
+  --navy-2: #0a456d;
+  --blue: #0b6f9f;
+  --cyan: #28a4cf;
+  --muted: #536b7c;
+  --line: #cedde6;
+  --soft: #e8f0f4;
+  --soft-blue: #e0eef4;
+  --white: #fbfcfd;
   --warning: #b85d16;
-  --shadow: 0 18px 42px rgba(9, 42, 82, 0.12);
-  --shadow-small: 0 8px 22px rgba(9, 42, 82, 0.08);
+  --shadow: 0 18px 42px rgba(3, 26, 48, 0.13);
+  --shadow-small: 0 8px 22px rgba(3, 26, 48, 0.09);
   --radius: 8px;
   --container: 1160px;
 }
@@ -2623,6 +2623,96 @@ h3 {
   .info-checklist {
     padding: 16px;
   }
+}
+
+/* Existing-site palette bridge */
+.site-header {
+  background: rgba(248, 251, 252, 0.95);
+  border-bottom-color: rgba(190, 207, 218, 0.82);
+}
+
+.hero {
+  background:
+    radial-gradient(circle at 72% 16%, rgba(40, 164, 207, 0.15), transparent 34%),
+    linear-gradient(180deg, #d5e1e8 0%, #eaf1f5 17%, #f7fafb 100%);
+  box-shadow: inset 0 30px 44px -42px #031a30;
+}
+
+.hero::before {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 6px;
+  background: linear-gradient(90deg, #031a30 0%, #0b4667 52%, var(--cyan) 100%);
+  content: "";
+}
+
+.section {
+  background: #f7fafb;
+}
+
+.section-muted {
+  background: var(--soft);
+  border-color: #d3e0e7;
+}
+
+.issue-grid article,
+.entry-grid article,
+.service-grid article,
+.cargo-card,
+.case-list article,
+.timeline article,
+.check-panel,
+.info-checklist,
+.company-table,
+.issue-diagram article,
+.hero-visual {
+  background-color: rgba(251, 253, 254, 0.96);
+  border-color: #c9d9e3;
+  box-shadow: 0 10px 26px rgba(3, 26, 48, 0.09);
+}
+
+.hero-label,
+.section-label,
+.section-muted .section-label,
+.final-cta .section-label,
+.policy-hero .section-label,
+.panel-eyebrow {
+  background: linear-gradient(135deg, var(--navy), #0b5978) !important;
+}
+
+.button-primary,
+.nav-cta {
+  background: linear-gradient(135deg, var(--navy), #0b5c7e);
+  box-shadow: 0 14px 26px rgba(3, 26, 48, 0.2);
+}
+
+.button-primary:hover,
+.button-primary:focus-visible,
+.nav-cta:hover,
+.nav-cta:focus-visible {
+  background: linear-gradient(135deg, #041f36, var(--navy-2));
+}
+
+.button-secondary,
+.hero-secondary-action,
+.button-lcl-check.hero-secondary-action {
+  background: rgba(251, 253, 254, 0.9);
+  border-color: #8eafc1;
+}
+
+.section-note,
+.caution,
+.entry-kicker,
+.issue-icon,
+.mini-flow span {
+  background-color: var(--soft-blue);
+  border-color: #bcd4e0;
+}
+
+.final-cta {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(40, 164, 207, 0.2), transparent 34%),
+    linear-gradient(135deg, #031a30 0%, #073b5a 100%);
 }
 
 /* China-to-Japan scroll story */
