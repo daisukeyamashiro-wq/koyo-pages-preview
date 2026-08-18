@@ -2786,6 +2786,11 @@ h3 {
   text-shadow: 0 4px 30px rgba(0, 13, 25, 0.46);
 }
 
+.ocean-story-fixed-lines span {
+  display: block;
+  white-space: nowrap;
+}
+
 .ocean-story-copy > p:not(.ocean-story-kicker) {
   max-width: 46ch;
   margin: 25px 0 0;
@@ -3036,6 +3041,10 @@ h3 {
     max-width: 12ch;
     font-size: clamp(36px, 10.3vw, 50px);
     line-height: 1.12;
+  }
+
+  .ocean-story-fixed-lines span {
+    white-space: normal;
   }
 
   .ocean-story-copy > p:not(.ocean-story-kicker) {
