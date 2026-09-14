@@ -42,6 +42,7 @@
         .hero-actions { grid-template-columns: 1fr; width: 100%; }
       }
     </style>
+    <link rel="stylesheet" href="top-page.css?v=20260914">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXFBEWN77W"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -79,17 +80,44 @@
           <a href="#entry">目的別入口</a>
           <a href="#services">対応サービス</a>
           <a href="#issues">止まる原因</a>
-          <a href="factory-check.html">工場確認</a>
+          <a href="factory-check.html" data-cta-event="factory_check">工場確認</a>
           <a href="lcl-check.html">LCL診断</a>
           <a href="#cases">事例</a>
           <a href="#faq">FAQ</a>
           <a href="#contact">お問い合わせ</a>
-          <a class="nav-cta" href="#" data-contact-link>輸送条件を相談する</a>
+          <a class="nav-cta" href="#" data-contact-link>中国→日本輸送を相談する</a>
         </nav>
       </div>
     </header>
 
     <main id="main">
+      <section class="first-view" id="first-view" aria-labelledby="first-view-title">
+        <img class="first-view-image" src="assets/story/scene-01-factory.webp" alt="" aria-hidden="true" fetchpriority="high" width="1600" height="900">
+        <div class="container first-view-inner">
+          <h1 id="first-view-title"><span>中国→日本輸入の調整を、</span><span>ひとつの窓口で。</span></h1>
+          <p class="first-view-lead">中国工場・中国側物流・船社・日本側通関・国内配送まで。<br>KOYOが関係各社をつなぎ、輸送条件・必要書類・スケジュールを整理します。</p>
+          <p class="first-view-role">中国→日本輸入のControl Tower</p>
+          <div class="first-view-actions">
+            <a class="button button-primary" href="#" data-contact-link data-cta-event="hero_contact">中国→日本輸送を相談する</a>
+            <a class="button button-secondary" href="/lcl-check.html" data-cta-event="hero_lcl_check">上海発LCL 初期診断</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="control-tower" aria-labelledby="control-tower-title">
+        <div class="container split-layout control-tower-layout">
+          <div>
+            <p class="section-label">Our Role</p>
+            <h2 id="control-tower-title">中国側と日本側を、ひとつの窓口で調整します。</h2>
+          </div>
+          <div class="control-tower-copy">
+            <p>中国→日本輸入では、中国工場、中国側物流会社、船社、CFS、日本側通関、倉庫、配送会社など、複数の事業者が関わります。</p>
+            <p>KOYOは荷主様の窓口として、中国側・日本側双方の条件を整理し、出荷前確認から日本国内納品まで、関係各社との調整を行います。</p>
+            <p class="control-tower-note">KOYOは実運送人ではなく、中国→日本物流の営業・案件調整窓口として輸送全体を組み立てます。</p>
+          </div>
+        </div>
+      </section>
+
       <section class="ocean-story" id="journey" data-ocean-story aria-labelledby="journey-title">
         <div class="ocean-story-sticky">
           <div class="ocean-story-media" aria-hidden="true">
@@ -119,7 +147,7 @@
           <div class="ocean-story-copy-layer">
             <article class="ocean-story-copy is-active" data-story-copy>
               <p class="ocean-story-kicker">01　中国工場・出荷前確認</p>
-              <h1 class="ocean-story-fixed-lines" id="journey-title"><span>貨物が、本当に</span><span>動かせる日から。</span></h1>
+              <h2 class="ocean-story-fixed-lines" id="journey-title"><span>貨物が、本当に</span><span>動かせる日から。</span></h2>
               <p>完成日、集荷可能日、梱包、件数、重量、CBM。船期を決める前に、中国工場の情報を整理します。</p>
               <span>FACTORY CHECK</span>
             </article>
@@ -143,10 +171,10 @@
             </article>
             <article class="ocean-story-copy" data-story-copy>
               <p class="ocean-story-kicker">05　日本国内配送・納品</p>
-              <h2 class="ocean-story-fixed-lines"><span>中国から日本へ</span><span class="ocean-story-desktop-line">見えない条件までつなぐ</span><span class="ocean-story-mobile-line">見えない条件まで</span><span class="ocean-story-mobile-line">つなぐ</span></h2>
+              <h2 class="ocean-story-fixed-lines story-delivery-title"><span>中国から日本へ、</span><span>見えない条件まで<wbr>つなぐ。</span></h2>
               <p>工場、船社、CFS、通関、配送。それぞれの条件と責任範囲を整理し、貨物を次の地点へつなぎます。</p>
               <div class="ocean-story-actions">
-                <a class="ocean-story-cta" href="#" data-contact-link>輸送条件を相談する</a>
+                <a class="ocean-story-cta" href="#" data-contact-link>中国→日本輸送を相談する</a>
                 <a class="ocean-story-next" href="#top">詳しいサービスを見る</a>
               </div>
             </article>
@@ -171,14 +199,14 @@
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <h1 id="hero-title">中国から日本への物流、出荷前に“止まる原因”を整理します。</h1>
+            <h2 id="hero-title">中国から日本への物流、出荷前に“止まる原因”を整理します。</h2>
             <p class="hero-text">
               上海発LCL混載、FCL、電池貨物、危険品疑義、中国工場との出荷前確認まで。KOYOは、中国発日本向け物流で起きやすい「書類不足」「工場情報不足」「船社・CFS条件の見落とし」を、出荷前に整理する国際物流取次会社です。
             </p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#" data-contact-link>中国発日本向けの輸送条件を相談する</a>
+              <a class="button button-primary" href="#" data-contact-link>中国→日本輸送を相談する</a>
               <a class="button button-lcl-check hero-secondary-action" href="/lcl-check.html">上海発LCL 初期診断をする</a>
-              <a class="button button-secondary hero-secondary-action" href="/factory-check.html">中国工場確認サポートを見る</a>
+              <a class="button button-secondary hero-secondary-action" href="/factory-check.html" data-cta-event="factory_check">中国工場確認サポートを見る</a>
             </div>
             <p class="hero-contact-note">法人のお客様向けです。品名、中国側出荷地、日本側納品先など、分かる範囲でメールにご記入ください。</p>
             <ul class="badge-list" aria-label="対応概要">
@@ -307,15 +335,64 @@
               <span class="entry-kicker">Factory</span>
               <h3>中国工場 出荷前確認サポート</h3>
               <p>中国工場へ出荷日、梱包、件数、重量、CBM、Invoice / Packing List、電池・液体・粉末の有無を確認し、LCL/FCL見積前の情報を整理します。</p>
-              <a class="button button-secondary" href="/factory-check.html">工場確認サポートを見る</a>
+              <a class="button button-secondary" href="/factory-check.html" data-cta-event="factory_check">工場確認サポートを見る</a>
             </article>
             <article>
               <span class="entry-kicker">Cargo</span>
               <h3>貨物情報を送って相談</h3>
               <p>電池貨物、危険品疑義、化学品、食品関連、特殊貨物など、個別確認が必要な貨物はこちらからご相談ください。</p>
-              <a class="button button-primary" href="#" data-contact-link>中国発日本向けの輸送条件を相談する</a>
+              <a class="button button-primary" href="#" data-contact-link>中国→日本輸送を相談する</a>
             </article>
           </div>
+        </div>
+      </section>
+
+      <section class="section" id="network" aria-labelledby="network-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-label">Partner Network</p>
+            <h2 id="network-title">中国と日本を、実務でつなぐ物流ネットワーク</h2>
+            <p>KOYOは、中国側・日本側の物流パートナーと連携し、案件ごとに必要な輸送体制を組み立てます。</p>
+          </div>
+          <figure class="network-diagram" aria-labelledby="network-coordinator" aria-describedby="network-note">
+            <figcaption class="network-coordinator" id="network-coordinator">
+              <strong>KOYO<span>全体の物流調整</span></strong>
+              <span>Planning / Coordination / Risk Control</span>
+            </figcaption>
+            <ol class="network-flow" aria-label="中国工場から日本国内納品までの物流フロー">
+              <li><span class="network-step">01</span><strong>中国工場</strong></li>
+              <li><span class="network-step">02</span><strong>AST</strong><span>中国側物流パートナー</span></li>
+              <li><span class="network-step">03</span><strong>船社・CFS</strong></li>
+              <li><span class="network-step">04</span><strong>日本港</strong></li>
+              <li><span class="network-step">05</span><strong>TOP ASIA</strong><span>日本側物流パートナー</span></li>
+              <li><span class="network-step">06</span><strong>日本国内納品</strong></li>
+            </ol>
+          </figure>
+          <p class="network-note" id="network-note">※各社は独立した事業者です。案件内容、輸送条件、貨物内容等に応じて、実際の運送・通関・配送を担当する事業者は異なる場合があります。</p>
+          <div class="network-roles">
+            <article class="network-owner">
+              <div>
+                <p class="network-role">Planning / Coordination / Risk Control</p>
+                <h3>KOYO｜株式会社幸洋</h3>
+              </div>
+              <p>荷主様の窓口として、貨物条件、輸送方法、見積、スケジュール、中国側・日本側関係各社との調整を行います。</p>
+            </article>
+            <div class="network-partners">
+              <article>
+                <p class="network-role">China Operations</p>
+                <h3><a href="https://www.ast-logi.com/" target="_blank" rel="noopener">AST INTERNATIONAL LOGISTICS</a>｜上海</h3>
+                <p class="network-partner-type">中国側物流パートナー</p>
+                <p>中国工場との出荷確認、集荷、輸出通関、CFS搬入、Booking、船社・現場条件の確認など、中国側物流実務を担当します。</p>
+              </article>
+              <article>
+                <p class="network-role">Japan Operations</p>
+                <h3><a href="https://topasia.jp/" target="_blank" rel="noopener">日本冠亜物流株式会社 TOP ASIA JAPAN</a>｜日本</h3>
+                <p class="network-partner-type">日本側物流パートナー</p>
+                <p>日本側で必要となる輸入通関、港湾対応、倉庫、国内配送等について連携します。</p>
+              </article>
+            </div>
+          </div>
+          <a class="button button-primary network-contact" href="#" data-contact-link data-cta-event="network_contact">中国→日本輸送を相談する</a>
         </div>
       </section>
 
@@ -343,7 +420,7 @@
               </div>
               <h3>中国工場 出荷前確認サポート</h3>
               <p>中国工場へ、出荷日・梱包・件数・重量・CBM・Invoice / Packing List・電池や液体の有無などを確認し、日本語で整理します。LCL / FCL見積前に工場情報を整えたい方向けの月額サポートです。</p>
-              <a class="service-card-link" href="/factory-check.html">工場確認サポートを見る</a>
+              <a class="service-card-link" href="/factory-check.html" data-cta-event="factory_check">工場確認サポートを見る</a>
             </article>
             <article>
               <div class="service-card-top">
@@ -426,7 +503,7 @@
             <p class="section-label">Check Points</p>
             <h2 id="checks-title">出荷前に確認すべき情報を整理します。</h2>
             <p>詳細な診断は下層ページや個別相談で確認します。トップページでは、まず必要になりやすい情報だけを整理しています。</p>
-            <a class="button button-secondary" href="#" data-contact-link>中国発日本向けの輸送条件を相談する</a>
+            <a class="button button-secondary" href="#" data-contact-link>中国→日本輸送を相談する</a>
           </div>
           <div class="check-panel">
             <ul class="check-list">
@@ -445,28 +522,35 @@
         <div class="container">
           <div class="section-heading">
             <p class="section-label">Cases</p>
-            <h2 id="cases-title">よくある確認事例</h2>
+            <h2 id="cases-title">実際の対応事例</h2>
           </div>
-          <div class="case-list case-list-short">
+          <div class="case-list case-studies">
             <article>
-              <span>Case 01</span>
-              <i class="case-icon service-icon service-icon-risk" aria-hidden="true"></i>
-              <h3>電池内蔵品の船社確認</h3>
-              <p>製品写真、MSDS、UN38.3、電池容量、梱包状態を確認し、船社・CFSへ確認すべき条件を整理します。</p>
+              <div class="case-heading"><span>CASE 01</span><h3>中国南部 → 関東｜FCL</h3><p>貨物：生活関連商品</p></div>
+              <dl class="case-details">
+                <div><dt>課題</dt><dd>船会社から貨物内容に関する追加資料の提出を求められ、当初予定していた船会社・スケジュールでの輸送継続が難しくなりました。</dd></div>
+                <div><dt>対応</dt><dd><ul><li>中国側工場へ必要資料を確認</li><li>船会社からの確認事項を整理</li><li>代替船会社を選定</li><li>Bookingを再構築</li><li>日本側通関資料を事前確認</li><li>倉庫・国内配送スケジュールを再調整</li></ul></dd></div>
+                <div><dt>結果</dt><dd>輸送条件を組み直し、日本側納入計画への影響を抑えながら手配を継続しました。</dd></div>
+              </dl>
             </article>
             <article>
-              <span>Case 02</span>
-              <i class="case-icon service-icon service-icon-dg" aria-hidden="true"></i>
-              <h3>LCL搬入前の危険品疑義</h3>
-              <p>SDSや商品説明を確認し、一般品として進められるか、追加確認が必要かを搬入前に整理します。</p>
+              <div class="case-heading"><span>CASE 02</span><h3>中国北部 → 関東｜LCL</h3><p>貨物：一般消費財</p></div>
+              <dl class="case-details">
+                <div><dt>課題</dt><dd>中国側で提示されたHS Codeと、日本輸入時に想定される分類に差異があり、そのままでは関税・通関条件を確定できない状況でした。</dd></div>
+                <div><dt>対応</dt><dd><ul><li>商品の用途を確認</li><li>材質・構造を整理</li><li>日本側通関担当へ事前確認</li><li>輸入時の分類根拠を整理</li><li>輸送費・通関費・国内配送費を再確認</li></ul></dd></div>
+                <div><dt>結果</dt><dd>量産・出荷前の段階で、日本側の輸入条件と物流費の前提を整理しました。</dd></div>
+              </dl>
             </article>
             <article>
-              <span>Case 03</span>
-              <i class="case-icon service-icon service-icon-documents" aria-hidden="true"></i>
-              <h3>Invoice / Packing List の不一致</h3>
-              <p>件数、重量、CBM、品名、価格条件の不一致を確認し、通関・見積前の確認事項として整理します。</p>
+              <div class="case-heading"><span>CASE 03</span><h3>中国沿海部 → 関西｜LCL</h3><p>貨物：一般貨物</p></div>
+              <dl class="case-details">
+                <div><dt>課題</dt><dd>出荷書類の一部に記載内容の不一致があり、あわせて輸出通関に必要な手続きが未完了の状態でした。<br><br>このまま進めると、通関やCFS搬入後の訂正につながる可能性がありました。</dd></div>
+                <div><dt>対応</dt><dd><ul><li>Invoice・Packing List・関連書類を照合</li><li>不一致箇所を中国側へ確認</li><li>修正版書類の手配</li><li>通関手続きの進捗を確認</li><li>B/L記載内容を事前確認</li><li>発行方法・Shipping Mark等を整理</li></ul></dd></div>
+                <div><dt>結果</dt><dd>船積み前に書類と通関条件を整理し、訂正後の情報を基準に輸送手配を進めました。</dd></div>
+              </dl>
             </article>
           </div>
+          <a class="button button-secondary case-contact" href="#" data-contact-link data-cta-event="case_contact">中国→日本輸送を相談する</a>
         </div>
       </section>
 
@@ -532,7 +616,7 @@
             </article>
             <article class="faq-item">
               <button type="button" aria-expanded="false">中国側工場とのやり取りも可能ですか？</button>
-              <div class="faq-answer"><p>案件条件により、中国語での確認対応が可能です。月額で中国工場との出荷前確認を依頼したい場合は、<a href="/factory-check.html">中国工場 出荷前確認サポート</a>をご確認ください。</p></div>
+              <div class="faq-answer"><p>案件条件により、中国語での確認対応が可能です。月額で中国工場との出荷前確認を依頼したい場合は、<a href="/factory-check.html" data-cta-event="factory_check">中国工場 出荷前確認サポート</a>をご確認ください。</p></div>
             </article>
             <article class="faq-item">
               <button type="button" aria-expanded="false">通関で止まらないと保証できますか？</button>
@@ -555,9 +639,9 @@
             </ul>
           </div>
           <div class="final-actions">
-            <a class="button button-primary" href="#" data-contact-link>中国発日本向けの輸送条件を相談する</a>
+            <a class="button button-primary" href="#" data-contact-link data-cta-event="final_contact">中国→日本輸送を相談する</a>
             <a class="button button-lcl-check" href="/lcl-check.html">上海発LCL 初期診断をする</a>
-            <a class="button button-light" href="/factory-check.html">中国工場確認サポートを見る</a>
+            <a class="button button-light" href="/factory-check.html" data-cta-event="factory_check">中国工場確認サポートを見る</a>
             <p class="mail-fallback">
               品名、中国側出荷地、日本側納品先など、分かる範囲でメールにご記入ください。<br>
               メールアプリが開かない場合は、<a href="#" data-contact-link data-contact-email>問い合わせ先メール</a>宛てに直接ご連絡ください。
@@ -587,8 +671,8 @@
               <dt>パートナー会社</dt>
               <dd>
                 <ul class="partner-list">
-                  <li><a href="https://topasia.jp/" target="_blank" rel="noopener">日本冠亜物流株式会社 トップアジアジャパン</a></li>
-                  <li><a href="https://www.ast-logi.com/" target="_blank" rel="noopener">AST INTERNATIONAL LOGITSITICS</a></li>
+                  <li><span class="company-partner-role">日本側物流パートナー</span><a href="https://topasia.jp/" target="_blank" rel="noopener">日本冠亜物流株式会社 TOP ASIA JAPAN</a></li>
+                  <li><span class="company-partner-role">中国側物流パートナー</span><a href="https://www.ast-logi.com/" target="_blank" rel="noopener">AST INTERNATIONAL LOGISTICS</a></li>
                 </ul>
               </dd>
             </div>
@@ -616,6 +700,6 @@
       <button type="button" data-copy-email>コピー</button>
     </div>
 
-    <script src="script.js?v=scroll-story-20260818b"></script>
+    <script src="script.js?v=20260914"></script>
   </body>
 </html>

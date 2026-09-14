@@ -1,0 +1,380 @@
+/* TOP部分改修。既存ページの色・書体・余白を使用する。 */
+.first-view {
+  position: relative;
+  isolation: isolate;
+  color: var(--white);
+  background: var(--navy);
+}
+
+.first-view-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.first-view::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(2, 17, 32, 0.74);
+  content: "";
+}
+
+.first-view-inner {
+  display: flex;
+  min-height: min(660px, calc(100svh - 156px));
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.first-view-brand {
+  margin-bottom: 22px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.first-view h1 {
+  max-width: 1050px;
+  margin-bottom: 24px;
+  color: var(--white);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", Georgia, serif;
+  font-size: clamp(46px, 4.85vw, 72px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+  text-shadow: 0 4px 30px rgba(0, 13, 25, 0.46);
+}
+
+.first-view h1 span {
+  display: block;
+}
+
+.first-view-lead {
+  max-width: 730px;
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+.first-view-role {
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+
+.first-view-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.first-view-actions .button-primary {
+  border-color: #8eafc1;
+}
+
+.first-view-actions .button-secondary {
+  background: var(--white);
+}
+
+.control-tower-copy p {
+  margin-bottom: 18px;
+}
+
+.control-tower-copy .control-tower-note {
+  margin-bottom: 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+}
+
+/* H1からH2へ変更した既存コピーの表示寸法を保つ。 */
+.hero #hero-title {
+  max-width: 720px;
+  margin-bottom: 16px;
+  font-size: 60px;
+  line-height: 1.08;
+}
+
+.network-diagram {
+  margin: 0;
+}
+
+@media (min-width: 781px) {
+  #network-title { max-width: 13em; }
+}
+
+.network-coordinator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  padding: 22px 24px;
+  border-top: 3px solid var(--blue);
+  color: var(--navy);
+  background: var(--soft-blue);
+}
+
+.network-coordinator strong {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  font-size: 26px;
+}
+
+.network-coordinator strong span {
+  font-size: 16px;
+}
+
+.network-coordinator > span {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.network-flow {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+  list-style: none;
+}
+
+.network-flow li {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 108px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  border-top: 1px solid var(--line);
+  color: var(--navy);
+  font-size: 14px;
+}
+
+.network-flow strong {
+  font-size: 17px;
+}
+
+.network-step {
+  color: var(--blue);
+  font-weight: 800;
+}
+
+.network-flow li:not(:last-child)::after {
+  position: absolute;
+  top: 50%;
+  right: -14px;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid var(--blue);
+  border-right: 2px solid var(--blue);
+  transform: rotate(45deg);
+  content: "";
+}
+
+.network-note {
+  margin: 18px 0 34px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.network-owner,
+.network-partners {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 36px;
+}
+
+.network-owner {
+  padding-bottom: 28px;
+}
+
+.network-partners article {
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.network-roles h3 {
+  overflow-wrap: anywhere;
+  font-size: 19px;
+}
+
+.network-role {
+  margin-bottom: 10px;
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.network-partner-type {
+  margin-bottom: 12px;
+  color: var(--navy);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.network-owner > p,
+.network-partners article > p:last-child {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.network-roles a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.network-contact,
+.case-contact {
+  margin-top: 30px;
+}
+
+.case-studies article {
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.5fr);
+  gap: 30px;
+  padding: 28px;
+}
+
+.case-studies .case-heading h3 {
+  margin-bottom: 12px;
+  font-size: 21px;
+}
+
+.case-details {
+  margin: 0;
+  color: var(--muted);
+}
+
+.case-details > div {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 12px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+
+.case-details > div:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.case-details > div:last-child {
+  padding-bottom: 0;
+}
+
+.case-details dt {
+  color: var(--navy);
+  font-weight: 800;
+}
+
+.case-details dd {
+  min-width: 0;
+  margin: 0;
+}
+
+.case-details ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px 24px;
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.company-partner-role {
+  display: block;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.first-view a:focus-visible,
+.network-roles a:focus-visible,
+.network-contact:focus-visible,
+.case-contact:focus-visible,
+.ocean-story-rail button:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 4px;
+}
+
+.ocean-story-fixed-lines.story-delivery-title span {
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1280px) {
+  .hero #hero-title { font-size: 52px; }
+  .site-nav { gap: 12px; }
+}
+
+@media (max-width: 1060px) {
+  .network-flow { gap: 18px; }
+  .network-flow strong { font-size: 15px; }
+  .network-flow li { font-size: 13px; }
+  .network-flow li:not(:last-child)::after { right: -11px; }
+}
+
+@media (max-width: 780px) {
+  .first-view-inner {
+    min-height: calc(100svh - 140px);
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+  .first-view h1 { font-size: 38px; line-height: 1.12; }
+  .first-view-lead { font-size: 16px; }
+  .first-view-brand { margin-bottom: 18px; font-size: 16px; }
+  .first-view-role { font-size: 15px; }
+  .first-view-actions { width: 100%; }
+  .first-view-actions .button { min-height: 48px; }
+  .hero #hero-title { font-size: 36px; line-height: 1.22; }
+  .control-tower-layout { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .network-coordinator { padding: 20px 16px; }
+  .network-flow { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 24px 0; }
+  .network-flow li {
+    min-height: 62px;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px 14px;
+    padding-top: 12px;
+    font-size: 14px;
+  }
+  .network-flow strong { font-size: 17px; }
+  .network-flow li:not(:last-child)::after {
+    top: auto;
+    right: auto;
+    bottom: -13px;
+    left: 50%;
+    transform: rotate(135deg);
+  }
+  .network-owner,
+  .network-partners { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .network-partners article { padding-top: 24px; }
+  .case-studies article { grid-template-columns: minmax(0, 1fr); gap: 20px; padding: 20px; }
+  .case-details ul { grid-template-columns: minmax(0, 1fr); }
+  .ocean-story-rail { gap: 0; right: 4px; }
+  .ocean-story-rail button { width: 44px; height: 44px; }
+  .ocean-story-rail button::after { inset: 19px; }
+  .ocean-story-rail button.is-active::after { inset: 15px; }
+  .ocean-story-copy { right: 52px; }
+  .ocean-story-cta,
+  .ocean-story-next { min-height: 44px; }
+}
+
+@media (max-width: 480px) {
+  .first-view h1 { font-size: clamp(24px, 7.9vw, 32px); }
+  .hero #hero-title { font-size: 32px; line-height: 1.24; }
+  .case-details > div { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .case-studies .case-heading h3 { font-size: 20px; }
+  .nav-toggle { width: 44px; height: 44px; }
+}

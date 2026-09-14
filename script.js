@@ -156,6 +156,20 @@ copyEmailButtons.forEach((button) => {
   });
 });
 
+// CTAの種類のみ送信し、メール本文や貨物情報は計測に含めない。
+document.querySelectorAll("[data-cta-event]").forEach((link) => {
+  link.addEventListener("click", () => {
+    if (typeof window.gtag !== "function") return;
+    try {
+      window.gtag("event", link.dataset.ctaEvent, {
+        transport_type: "beacon",
+      });
+    } catch {
+      // 計測できない場合もリンクの標準動作を維持する。
+    }
+  });
+});
+
 // 中国工場から日本納品までのスクロールストーリー
 const oceanStory = document.querySelector("[data-ocean-story]");
 
@@ -166,7 +180,7 @@ if (oceanStory) {
   const storyJumps = [...oceanStory.querySelectorAll("[data-story-jump]")];
   const storyCounter = oceanStory.querySelector("[data-story-counter]");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  let activeStoryScene = 0;
+  let activeStoryScene = -1;
   let storyFrame = 0;
 
   const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
@@ -183,6 +197,7 @@ if (oceanStory) {
       const isActive = copyIndex === index;
       copy.classList.toggle("is-active", isActive);
       copy.setAttribute("aria-hidden", String(!isActive));
+      copy.inert = !isActive;
     });
 
     storyJumps.forEach((button, buttonIndex) => {
@@ -202,7 +217,15 @@ if (oceanStory) {
 
   const updateOceanStory = () => {
     storyFrame = 0;
-    if (reducedMotion.matches || !storySticky || storyScenes.length < 2) return;
+    if (reducedMotion.matches) {
+      storyCopies.forEach((copy) => {
+        copy.removeAttribute("aria-hidden");
+        copy.inert = false;
+      });
+      activeStoryScene = -1;
+      return;
+    }
+    if (!storySticky || storyScenes.length < 2) return;
 
     const headerHeight = header?.offsetHeight || 0;
     const rect = oceanStory.getBoundingClientRect();
