@@ -936,8 +936,27 @@ h3 {
 
 .entry-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
+}
+
+.button-schedule {
+  color: var(--navy);
+  background: #ffe45c;
+  border-color: #e1c228;
+  box-shadow: 0 10px 22px rgba(6, 43, 74, 0.16);
+}
+
+.button-schedule:hover,
+.button-schedule:focus-visible {
+  color: var(--navy);
+  background: #ffed87;
+  border-color: #d1af10;
+}
+
+.entry-grid .schedule-entry {
+  border-top: 4px solid #f2cf22;
+  box-shadow: 0 16px 34px rgba(6, 43, 74, 0.13);
 }
 
 .issue-grid {
